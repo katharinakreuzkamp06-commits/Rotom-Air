@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotom Bake</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="start">
+<nav class="navbar">
+    
+    <div class="logo">
+        <a href="#start" aria-label="Zurück zum Start">
+            <img src="pokeball.png" alt="Zurück zum Start">
+        </a>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#material-section">Material</a></li>
+        <li><a href="#features">Eigenschaften</a></li>
+        <li><a href="#recipe-slider">Kommentare</a></li> 
+        <li><a href="#shipping">Versand</a></li>
+        <li><a href="#ruecksendung">Rücksendungen</a></li>
+      
+    </ul>
+
+    <button class="menu-toggle" type="button" aria-label="Navigation öffnen" aria-expanded="false">
+        <img src="hamburger-menu-icon.png" alt="">
+    </button>
+
+</nav>
+
+    <header class="hero">
+        <div class="hero-media">
+            <span class="badge">NEU!</span>
+                <video class="hero-video" autoplay muted loop playsinline poster="beschreibung.png">
+                    <source src="Herovideo.mp4" type="video/mp4">
+                </video>
+        </div>
+        <div class="hero-content">
+            <h1>Rotom Air</h1>
+            <h2>Dein cooler Begleiter für jedes Abenteuer!</h2>
+            <p>
+              Egal ob du gerade in der Arena schwitzt oder draußen auf Pokémon-Suche bist – der Rotom Air sorgt für die nötige Abkühlung.<br> Kompakt, kraftvoll und bereit für den Einsatz!<br>
+Wir haben Rotoms Energie in einen bürstenlosen Motor gesteckt, der so leise und effizient ist, dass du ihn kaum hörst – aber den Luftstrom eines Tauboss spürst!
+            </p>
+        </div>
+    </header>
+
+    <section class="description-section">
+        <div class="description-container" id="description-container" data-part="case">
+            <div class="description-tabs" role="tablist" aria-label="Produktmerkmale">
+                <button class="description-tab active" type="button" role="tab" aria-selected="true" data-part="case">Modi</button>
+                <button class="description-tab" type="button" role="tab" aria-selected="false" data-part="window">Rotorblätter</button>
+                <button class="description-tab" type="button" role="tab" aria-selected="false" data-part="handles">Laden</button>
+                
+            </div>
+
+            <div class="description-view">
+                <div class="description-image-frame">
+                    <img src="Modi.png" alt="Rotom-Lampe im Modi-Modus" class="description-image">
+                </div>
+
+                <div class="description-info" aria-live="polite">
+                    <p class="description-kicker">Modi</p>
+                    <h2>Verschiedene Modi für jede Situation</h2>
+                    <p>Die Lampe bietet verschiedene Modi, damit du sie perfekt an deine Bedürfnisse anpassen kannst.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="material-section" id="material-section">
+        <h2>Material</h2>
+        <div class="material-list">
+            <div class="material-item">
+                <img src="Gehäuse.png" alt="rPBT Material" class="material-image">
+                <p>Orangene und gelbe Kunststoff-Granulate / Filamente: Diese dienen als Basis für das Gehäuse. Im Spritzguss- oder 3D-Druckverfahren werden daraus der ergonomische Griff, der niedliche Motiv-Kopf und das schützende Lüftergitter geformt.</p>
+            </div>
+            <div class="material-item">
+                <img src="Kupferdraht.png" alt="Edelstahl Material" class="material-image">
+                <p>Kupferdraht (Spule): Wird für die Wicklungen des Elektromotors benötigt. Er erzeugt das Magnetfeld, das den Motor hocheffizient antreibt.</p>
+            </div>
+            <div class="material-item">
+                <img src="Elektronik.png" alt="Silikon Material" class="material-image">
+                <p>Grüne Leiterplatten (PCB) & Mikrochips: Das „Gehirn“ des Ventilators. Sie regeln die 3 Geschwindigkeitsstufen und steuern das sichere Laden des Akkus (Überladeschutz).</p>
+            </div>
+            
+        </div>
+    </section>
+    
+
+    <section class="feature-section" id="features">
+
+    <div class="feature-row">
+        <div class="feature-image">
+            <img src="Magnetinnen.png" alt="25 Liter Kompaktpower">
+        </div>
+
+        <div class="feature-text">
+            <h2>Drei Speed-Stufen</h2>
+            <p>
+Wähle zwischen „Sanfter Windhauch“, „Wirbelsturm“ und dem extremen „Aeropost-Modus“.
+            </p>
+        </div>
+    </div>
+
+    <div class="feature-row reverse">
+        <div class="feature-image">
+            <img src="Abstoß.png" alt="Plasma Power">
+        </div>
+
+        <div class="feature-text">
+            <h2>Ventilatorflügel</h2>
+            <p>
+            Weicheres EVA-Schaumstoff/TPE, da es für Kinder ist (Verletzungsschutz).
+            </p>
+        </div>
+    </div>
+
+    <div class="feature-row">
+        <div class="feature-image">
+            <img src="Prozessor.png" alt="Cool Touch">
+        </div>
+
+        <div class="feature-text">
+            <h2>Innenleben</h2>
+            <p>
+Ein bürstenloser Motor (Brushless DC) für Langlebigkeit – passend zu Rotoms Lore als "Motor-Pokémon".
+            </p>
+        </div>
+
+        <div class="feature-row reverse">
+        <div class="feature-image">
+            <img src="Abstoß.png" alt="Plasma Power">
+        </div>
+
+
+        <div class="feature-text">
+            <h2>Oberfläche</h2>
+            <p>
+Eine UV-Beschichtung, damit das leuchtende Orange auch bei direkter Sonneneinstrahlung im Sommer nicht ausbleicht.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+    </section>
+
+    
+
+    
+
+    <br><br>
+    <button>Vorbestellen</button>
+    <br> <br>
+
+
+    
+
+    <div class="shipping-section-grid">
+        <section class="shipping" id="shipping">
+            <h2>Versand</h2>
+            <p>
+                Standardversand: 8–12 Tage<br>
+                Expressversand: 6–10 Tage
+            </p>
+        </section>
+
+        <section class="shipping" id="ruecksendung">
+            <h2>Rücksendungen</h2>
+            <p>
+                Rückgabe innerhalb von 30 Tagen nach Lieferung.
+            </p>
+        </section>
+    </div>
+
+    
+
+    <div class="leiste">
+            <img src="pokeball.png">
+            <p>Pokémon</p>
+         </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Kundenservice</a>
+            <a href="#">Versand</a>
+            <a href="#">Rücksendungen</a>
+            <a href="#">FAQ</a>
+            <a href="#">Über uns</a>
+            <a href="#">日本版サイト</a>
+            <a href="#">Datenschutz</a>
+        </div>
+
+        <p>
+            ©2026 Pokémon. ©1995 - 2026 Nintendo/Creatures Inc./GAME FREAK inc. TM, ®Nintendo.
+        </p>
+    </footer>
+
+</body>
+</html>
