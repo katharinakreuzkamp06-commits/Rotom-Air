@@ -20,6 +20,7 @@ body {
     align-items: center;
     background: #FFE60B;
     min-height: 60px;
+    padding: 0 12px 0 0;
 }
 
 .logo img {
@@ -39,6 +40,7 @@ body {
     display: flex;
     gap: 35px;
     list-style: none;
+    align-items: center;
 }
 
 .nav-links a {
@@ -55,7 +57,10 @@ body {
 
 .menu-toggle {
     display: none;
-    margin: 0 8px 0 0;
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    margin: 0;
     padding: 8px;
     border: 0;
     background: transparent;
@@ -72,10 +77,6 @@ body {
     object-fit: contain;
     border-radius: 0;
     filter: brightness(0) invert(1);
-}
-
-.navbar.menu-open .menu-toggle {
-    display: none;
 }
 
 .hero-content {
@@ -136,7 +137,7 @@ body {
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 20px;
+    border-radius: 16px;
 }
 
 .description-section {
@@ -186,18 +187,27 @@ img {
 
 .description-view {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: 28px;
 }
 
 .description-image-frame {
     flex: 1.35;
+    min-width: 0;
     aspect-ratio: 16 / 10;
     overflow: hidden;
-    border-radius: 24px;
-    background: transparent;
+    border-radius: 18px;
+    background: #f7f7f7;
     box-shadow: none;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description-image-frame,
+.description-container .description-image {
+    border-radius: 18px;
 }
 
 .description-container .description-image {
@@ -205,12 +215,22 @@ img {
     height: 100%;
     margin: 0;
     display: block;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
-    border-radius: 16px;
-    background: transparent;
+    border-radius: 18px;
+    background: #f7f7f7;
     transform: none;
     transition: transform 0.55s ease;
+}
+
+@media (min-width: 1024px) {
+    .description-image-frame {
+        height: 99%;
+    }
+
+    .description-container .description-image {
+        height: 99%;
+    }
 }
 
 .description-container[data-part="case"] .description-image {
@@ -426,11 +446,13 @@ img {
     gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding-bottom: 15px;
+    padding: 0 20px 15px;
+    width: calc(100% - 40px);
+    margin: 40px auto 0;
 }
 
 .recipe-slider::-webkit-scrollbar {
-    height: 10px;
+    height: 6px;
 }
 
 .recipe-slider::-webkit-scrollbar-thumb {
@@ -442,8 +464,22 @@ img {
     background: #f8f8f8;
     overflow: hidden;
     flex-shrink: 0;
-    width: min(600px, 82vw);
+    flex: 0 0 clamp(560px, 85vw, 900px);
+    width: clamp(560px, 85vw, 900px);
+    max-width: 900px;
     border-radius: 15px;
+}
+
+@media (max-width: 760px) {
+    .recipe-slider {
+        width: calc(100% - 30px);
+    }
+
+    .recipe-card {
+        flex: 0 0 90vw;
+        width: 90vw;
+        max-width: 90vw;
+    }
 }
 
 .recipe-card img {
@@ -460,13 +496,23 @@ img {
 }
 
 .recipe-card h3 {
-    padding: 15px;
+    margin: 0 0 12px 0;
+    padding: 0;
+}
+
+/* Card body: more left padding, less right padding */
+.recipe-card .recipe-card-body {
+    padding: 28px 12px 28px 48px;
 }
 
 .rating {
     color: #FFE60B;
     font-size: 1.1rem;
     letter-spacing: 0.15em;
+}
+
+.recipe-card .rating {
+    margin-right: 8px;
 }
 
 .shipping {
@@ -588,6 +634,17 @@ footer {
     .description-image-frame {
         width: 100%;
         aspect-ratio: 4 / 3;
+        min-height: 280px;
+        overflow: hidden;
+    }
+
+    .description-container .description-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: none;
+        border-radius: 18px;
     }
 
     .description-info {
@@ -597,15 +654,6 @@ footer {
 
     .description-info h2 {
         font-size: 1.45rem;
-    }
-
-    .description-container[data-part="window"] .description-image,
-    .description-container[data-part="handles"] .description-image {
-        transform: scale(1.55);
-    }
-
-    .description-container[data-part="seal"] .description-image {
-        transform: scale(1.05);
     }
 }
 
@@ -660,11 +708,17 @@ footer {
 
 @media (max-width: 900px) {
     .navbar {
+        position: sticky;
         flex-wrap: wrap;
+        align-items: center;
+        padding: 0;
     }
 
     .menu-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
     }
 
     .nav-links {
@@ -674,6 +728,8 @@ footer {
         gap: 0;
         padding: 8px 0 12px;
         background: #FFE60B;
+        border-top: 1px solid rgba(255, 255, 255, 0.45);
+        order: 3;
     }
 
     .navbar.menu-open .nav-links {
