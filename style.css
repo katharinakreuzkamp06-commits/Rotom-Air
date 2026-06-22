@@ -453,8 +453,20 @@ img {
     object-fit: cover;
 }
 
+.recipe-card--review {
+    display: flex;
+    align-items: center;
+    min-height: 220px;
+}
+
 .recipe-card h3 {
     padding: 15px;
+}
+
+.rating {
+    color: #FFE60B;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
 }
 
 .shipping {
